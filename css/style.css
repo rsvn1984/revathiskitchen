@@ -1,454 +1,880 @@
-/* =====================================
-   REVATHI'S KITCHEN WEBSITE
-   Version 1.0
-======================================*/
+/* =========================================
+   REVATHI'S KITCHEN
+   Simple Landing Page - Version 1.0
+========================================= */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
+
+/* =========================================
+   BASIC RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
 
-    font-family:'Poppins',sans-serif;
+html {
+    scroll-behavior: smooth;
+}
 
-    background:linear-gradient(180deg,#f8f6df,#edf4cb);
 
-    color:#6b3e26;
+body {
+    font-family: Arial, Helvetica, sans-serif;
 
-    line-height:1.8;
+    background-color: #f7f3df;
+
+    color: #5b351f;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   COMMON CONTAINER
+========================================= */
+
+.container {
+    width: 92%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   FIXED HEADER
+========================================= */
+
+.site-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 150px;
+
+    z-index: 1000;
+
+    background-color: #f7f3df;
+
+    border-bottom: 1px solid #ded5b9;
+
+    box-shadow: 0 2px 8px rgba(80, 70, 30, 0.08);
+}
+
+
+/* Header container */
+
+.site-header .container {
+    height: 100%;
+
+    width: 94%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+}
+
+/* Logo */
+
+.logo {
+    position: absolute;
+
+    left: 0;
+
+    top: 10px;
+
+    width: 130px;
+
+    height: 130px;
+
+    object-fit: contain;
+
+    margin: 0;
+
+    mix-blend-mode: multiply;
+}
+
+/* Brand text */
+
+.site-header h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 32px;
+
+    color: #704225;
+
+    margin: 0 0 3px 155px;
+}
+
+/* Tagline */
+
+.tagline {
+    position: absolute;
+
+    left: 155px;
+
+    top: 82px;
+
+    font-size: 15px;
+
+    color: #704225;
+
+    margin: 0;
+}
+/* LOGO */
+
+.logo {
+    display: block;
+
+    width: 140px;
+
+    height: auto;
+
+    max-height: 140px;
+
+    object-fit: contain;
+
+    margin: 0 auto 10px;
+}
+
+
+/* WEBSITE NAME */
+
+.site-header h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 32px;
+
+    color: #704225;
+
+    margin-bottom: 4px;
+}
+
+
+/* TAGLINE */
+
+.tagline {
+    font-size: 16px;
+
+    color: #806044;
+
+    margin-bottom: 5px;
+}
+
+/* =========================================
+   LEAVE SPACE FOR FIXED HEADER
+========================================= */
+
+main {
+    padding-top: 150px;
+}
+
+/* =========================================
+   ABOUT SECTION
+========================================= */
+
+.about-section {
+    text-align: center;
+
+    padding: 30px 15px 35px;
+
+    background-color: #f7f3df;
+}
+
+
+.about-section h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 27px;
+
+    color: #704225;
+
+    margin-bottom: 15px;
+}
+
+
+.about-section p {
+    max-width: 760px;
+
+    margin: 0 auto 10px;
+
+    font-size: 15px;
+
+    color: #674832;
+}
+
+
+/* =========================================
+   LIVE MENU
+========================================= */
+
+.menu-section {
+    padding: 35px 15px 45px;
+
+    background-color: #eee9cf;
+}
+
+
+.menu-section > .container > h2 {
+    text-align: center;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 32px;
+
+    color: #704225;
+
+    margin-bottom: 5px;
+}
+
+
+.menu-introduction {
+    text-align: center;
+
+    font-size: 14px;
+
+    color: #806044;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   MENU CATEGORY
+========================================= */
+
+.menu-category {
+    margin-bottom: 35px;
+}
+
+
+.menu-category h3 {
+    text-align: center;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 24px;
+
+    color: #704225;
+
+    margin-bottom: 18px;
+
+    position: relative;
+}
+
+
+.menu-category h3::after {
+    content: "";
+
+    display: block;
+
+    width: 45px;
+
+    height: 2px;
+
+    background-color: #9b704b;
+
+    margin: 7px auto 0;
+}
+
+
+/* =========================================
+   MENU GRID
+========================================= */
+
+.menu-grid {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 14px;
+
+    justify-content: center;
+}
+
+
+/* =========================================
+   MENU ITEM
+========================================= */
+
+.menu-item {
+    background-color: #fffdf5;
+
+    border: 1px solid #ded5b9;
+
+    border-radius: 10px;
+
+    padding: 8px;
+
+    text-align: center;
+
+    box-shadow: 0 2px 6px rgba(80, 50, 25, 0.08);
+
+    transition: transform 0.2s ease;
+}
+
+
+.menu-item:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   FOOD IMAGE
+========================================= */
+
+.menu-item img {
+    display: block;
+
+    width: 120px;
+
+    height: 90px;
+
+    object-fit: cover;
+
+    border-radius: 7px;
+
+    margin: 0 auto 8px;
+}
+
+
+/* =========================================
+   FOOD NAME
+========================================= */
+
+.menu-item h4 {
+    font-size: 14px;
+
+    line-height: 1.3;
+
+    color: #5b351f;
+
+    min-height: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+.contact-section {
+    text-align: center;
+
+    padding: 40px 15px;
+
+    background-color: #f7f3df;
+}
+
+
+.contact-section h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 27px;
+
+    color: #704225;
+
+    margin-bottom: 8px;
+}
+
+
+.contact-section p {
+    font-size: 15px;
+
+    margin-bottom: 20px;
+
+    color: #674832;
+}
+
+
+/* =========================================
+   WHATSAPP BUTTON
+========================================= */
+
+.whatsapp-button {
+    display: inline-block;
+
+    background-color: #25D366;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    padding: 11px 22px;
+
+    border-radius: 30px;
+
+    transition: background-color 0.2s ease;
+}
+
+
+.whatsapp-button:hover {
+    background-color: #1da851;
+}
+
+
+/* =========================================
+   FEEDBACK SECTION
+========================================= */
+
+.feedback-section {
+    text-align: center;
+
+    padding: 35px 15px 40px;
+
+    background-color: #eee9cf;
+}
+
+
+.feedback-section h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 27px;
+
+    color: #704225;
+
+    margin-bottom: 8px;
+}
+
+
+.feedback-section p {
+    font-size: 15px;
+
+    color: #674832;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   FEEDBACK BUTTON
+========================================= */
+
+.feedback-button {
+    display: inline-block;
+
+    background-color: #8a5a36;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    padding: 11px 22px;
+
+    border-radius: 30px;
+
+    transition: background-color 0.2s ease;
+}
+
+
+.feedback-button:hover {
+    background-color: #704225;
+}
+
+
+/* =========================================
+   VISITOR COUNTER
+========================================= */
+
+.visitor-section {
+    text-align: center;
+
+    padding: 25px 15px;
+
+    background-color: #f7f3df;
+}
+
+
+.visitor-label {
+    font-size: 13px;
+
+    color: #806044;
+
+    margin-bottom: 4px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+.visitor-counter {
+    display: inline-block;
+
+    background-color: #2b2b2b;
+
+    color: #55ff55;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    padding: 6px 14px;
+
+    border-radius: 5px;
+
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    text-align: center;
+
+    background-color: #704225;
+
+    color: #fff8e8;
+
+    padding: 22px 15px;
+}
+
+
+.site-footer p {
+    font-size: 13px;
+
+    margin-bottom: 3px;
+}
+
+
+.site-footer .footer-note {
+    opacity: 0.8;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .menu-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
 }
 
-/* ===========================
-        CONTAINER
-=========================== */
 
-.container{
+/* =========================================
+   MOBILE
+========================================= */
 
-    width:90%;
-    max-width:1200px;
+@media (max-width: 600px) {
 
-    margin:auto;
+    .container {
+        width: 94%;
+    }
 
-}
 
-/* ===========================
-        HEADER
-=========================== */
+    .site-header {
+        padding-top: 20px;
+    }
 
-header{
 
-    background:#ffffffdd;
+    .logo {
+        width: 130px;
 
-    backdrop-filter:blur(10px);
+        max-height: 130px;
+    }
 
-    position:sticky;
 
-    top:0;
+    .site-header h1 {
+        font-size: 27px;
+    }
 
-    z-index:1000;
 
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    .tagline {
+        font-size: 14px;
+    }
 
-}
 
-.nav-container{
+    .about-section {
+        padding-top: 25px;
+    }
 
-    display:flex;
 
-    justify-content:space-between;
+    .about-section h2 {
+        font-size: 24px;
+    }
 
-    align-items:center;
 
-    padding:15px 0;
+    .menu-section {
+        padding-left: 10px;
 
-}
+        padding-right: 10px;
+    }
 
-.brand img{
 
-    width:170px;
+    .menu-section > .container > h2 {
+        font-size: 28px;
+    }
 
-}
 
-nav ul{
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
 
-    list-style:none;
+        gap: 10px;
+    }
 
-    display:flex;
 
-    gap:30px;
+    .menu-item {
+        padding: 7px;
+    }
 
-}
 
-nav a{
+    .menu-item img {
+        width: 110px;
 
-    text-decoration:none;
+        height: 80px;
+    }
 
-    color:#6b3e26;
 
-    font-weight:600;
+    .menu-item h4 {
+        font-size: 13px;
 
-    transition:.3s;
+        min-height: 34px;
+    }
 
-}
 
-nav a:hover{
+    .contact-section h2,
+    .feedback-section h2 {
+        font-size: 24px;
+    }
 
-    color:#3e6b2d;
 
-}
+    .whatsapp-button,
+    .feedback-button {
+        font-size: 15px;
 
-/* ===========================
-        HERO
-=========================== */
-
-.hero{
-
-    padding:80px 0;
-
-}
-
-.hero-grid{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:60px;
-
-    align-items:center;
+        padding: 10px 18px;
+    }
 
 }
 
-.hero-text h1{
 
-    font-family:'Cormorant Garamond',serif;
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
 
-    font-size:58px;
+@media (max-width: 380px) {
 
-    line-height:1.1;
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
 
-    margin-bottom:20px;
 
-    color:#5d2d1a;
+    .menu-item {
+        max-width: 180px;
 
-}
+        margin: 0 auto;
 
-.hero-text p{
+        width: 100%;
+    }
 
-    font-size:22px;
 
-    margin-bottom:35px;
+    .menu-item img {
+        width: 130px;
 
-    color:#3f5d31;
-
-}
-
-/* ===========================
-        BUTTONS
-=========================== */
-
-.hero-buttons{
-
-    display:flex;
-
-    gap:20px;
-
-    flex-wrap:wrap;
+        height: 90px;
+    }
 
 }
+/* =========================================
+   ABOUT US PAGE
+========================================= */
 
-.btn-primary{
+.about-page {
+    padding: 45px 15px 60px;
 
-    background:#3f6b2a;
+    background-color: #f7f3df;
 
-    color:white;
-
-    padding:15px 30px;
-
-    border-radius:40px;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-    transition:.3s;
-
+    text-align: center;
 }
 
-.btn-primary:hover{
 
-    background:#295319;
+.about-page h2 {
+    font-family: Georgia, "Times New Roman", serif;
 
-    transform:translateY(-2px);
+    font-size: 34px;
 
+    color: #704225;
+
+    margin-bottom: 30px;
 }
 
-.btn-secondary{
 
-    background:#c69d41;
+/* Revathi's photograph */
 
-    color:white;
+.revathi-photo {
+    margin: 0 auto 30px;
 
-    padding:15px 30px;
-
-    border-radius:40px;
-
-    text-decoration:none;
-
-    transition:.3s;
-
+    width: 220px;
 }
 
-.btn-secondary:hover{
 
-    background:#b8871e;
+.revathi-photo img {
+    display: block;
 
+    width: 220px;
+
+    height: 280px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    border: 1px solid #d6c6a8;
+
+    box-shadow: 0 3px 10px rgba(80, 50, 25, 0.15);
 }
 
-/* ===========================
-        HERO IMAGE
-=========================== */
 
-.hero-image img{
+/* Story heading */
 
-    width:100%;
+.about-page h3 {
+    font-family: Georgia, "Times New Roman", serif;
 
-    border-radius:25px;
+    font-size: 27px;
 
-    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    color: #704225;
 
+    margin-bottom: 25px;
 }
 
-/* ===========================
-        SECTIONS
-=========================== */
 
-.section{
+/* Story */
 
-    padding:80px 0;
+.story-content {
+    max-width: 800px;
 
-    text-align:center;
+    margin: 0 auto;
 
+    text-align: left;
 }
 
-.section h2{
 
-    font-family:'Cormorant Garamond',serif;
+.story-content p {
+    font-size: 16px;
 
-    font-size:46px;
+    line-height: 1.8;
 
-    margin-bottom:20px;
+    color: #674832;
 
-    color:#5d2d1a;
-
+    margin-bottom: 18px;
 }
 
-.section p{
 
-    max-width:800px;
+/* Story sub-headings */
 
-    margin:auto;
+.story-content h4 {
+    font-family: Georgia, "Times New Roman", serif;
 
-    font-size:18px;
+    font-size: 21px;
 
+    color: #704225;
+
+    margin-top: 30px;
+
+    margin-bottom: 10px;
+
+    text-align: center;
 }
 
-/* ===========================
-        FEATURES
-=========================== */
 
-.features{
+/* Back button */
 
-    padding:60px 0;
+.about-button {
+    display: inline-block;
 
+    margin-top: 30px;
+
+    padding: 10px 22px;
+
+    background-color: #8a5a36;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 25px;
+
+    font-weight: bold;
 }
 
-.feature-grid{
 
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:30px;
-
+.about-button:hover {
+    background-color: #704225;
 }
 
-.feature{
 
-    background:white;
+/* =========================================
+   ABOUT US - MOBILE
+========================================= */
 
-    padding:35px;
+@media (max-width: 600px) {
 
-    border-radius:20px;
+    .about-page {
+        padding-top: 35px;
+    }
 
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
 
-    transition:.3s;
+    .about-page h2 {
+        font-size: 28px;
+    }
 
-}
 
-.feature:hover{
+    .about-page h3 {
+        font-size: 23px;
+    }
 
-    transform:translateY(-8px);
 
-}
+    .revathi-photo,
+    .revathi-photo img {
+        width: 190px;
+    }
 
-.feature h3{
 
-    margin-bottom:15px;
+    .revathi-photo img {
+        height: 240px;
+    }
 
-}
 
-/* ===========================
-        MENU
-=========================== */
+    .story-content p {
+        font-size: 15px;
 
-.menu-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:35px;
-
-    margin-top:40px;
-
-}
-
-.menu-card{
-
-    background:white;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-
-}
-
-.menu-card img{
-
-    width:100%;
-
-    height:240px;
-
-    object-fit:cover;
-
-}
-
-.menu-card h3{
-
-    padding:20px;
-
-}
-
-/* ===========================
-        SERVICES
-=========================== */
-
-.services-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:25px;
-
-    margin-top:35px;
-
-}
-
-.services-grid div{
-
-    background:#ffffff;
-
-    padding:25px;
-
-    border-radius:18px;
-
-    font-weight:bold;
-
-    box-shadow:0 8px 18px rgba(0,0,0,.08);
-
-}
-
-/* ===========================
-        FOOTER
-=========================== */
-
-footer{
-
-    background:#3f6b2a;
-
-    color:white;
-
-    text-align:center;
-
-    padding:50px 20px;
-
-}
-
-.footer-logo{
-
-    width:120px;
-
-    margin-bottom:20px;
-
-}
-
-/* ===========================
-        MOBILE
-=========================== */
-
-@media(max-width:900px){
-
-.hero-grid{
-
-    grid-template-columns:1fr;
-
-    text-align:center;
-
-}
-
-.feature-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-.menu-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-.services-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-nav{
-
-    display:none;
-
-}
-
-.hero-text h1{
-
-    font-size:42px;
-
-}
-
-.section h2{
-
-    font-size:36px;
-
-}
+        line-height: 1.7;
+    }
 
 }
