@@ -1,0 +1,205 @@
+/* =========================================
+   Revathi's Kitchen - Customer Registration
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f1df;
+    color: #5a351f;
+}
+
+.registration-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.registration-card {
+    background: #fffdf6;
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 5px 20px rgba(90, 53, 31, 0.15);
+}
+
+.registration-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.registration-title h1 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: #7a4528;
+}
+
+.registration-title p {
+    margin-top: 8px;
+    color: #765b48;
+}
+
+.registration-section {
+    margin-bottom: 28px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #e4d8c2;
+}
+
+.registration-section:last-of-type {
+    border-bottom: none;
+}
+
+.registration-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: Georgia, serif;
+    font-size: 22px;
+    color: #7a4528;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cdbda7;
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 16px;
+    color: #4a3020;
+}
+
+.form-group textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #9a6038;
+    box-shadow: 0 0 0 3px rgba(154, 96, 56, 0.12);
+}
+
+.location-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.location-buttons button {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.current-location {
+    background: #25d366;
+    color: white;
+}
+
+.map-location {
+    background: #7a4528;
+    color: white;
+}
+
+.location-status {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #f2ead8;
+    font-size: 14px;
+}
+
+.register-button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #7a4528;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.register-button:hover {
+    background: #63361f;
+}
+
+@media (max-width: 600px) {
+
+    .registration-container {
+        margin: 15px auto;
+        padding: 10px;
+    }
+
+    .registration-card {
+        padding: 22px;
+    }
+
+    .registration-title h1 {
+        font-size: 27px;
+    }
+
+    .location-buttons {
+        flex-direction: column;
+    }
+
+    .location-buttons button {
+        width: 100%;
+    }
+}
+/* =========================================
+   Location Map
+   ========================================= */
+
+.map-container {
+    display: none;
+    margin-top: 15px;
+}
+
+#location-map {
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+    border: 1px solid #cdbda7;
+    overflow: hidden;
+}
+
+#confirm-map-location {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #7a4528;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#confirm-map-location:hover {
+    background: #63361f;
+}
