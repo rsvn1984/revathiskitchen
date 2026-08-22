@@ -138,3 +138,169 @@ confirmMapLocationButton.addEventListener(
         mapContainer.style.display = "none";
     }
 );
+// =========================================
+// Mobile Number Validation
+// =========================================
+
+const registrationForm =
+    document.getElementById("customer-registration-form");
+
+const mobileField =
+    document.getElementById("mobile");
+
+registrationForm.addEventListener("submit", function (event) {
+
+    const mobileNumber = mobileField.value.trim();
+
+    const indianMobilePattern = /^[6-9][0-9]{9}$/;
+
+    if (!indianMobilePattern.test(mobileNumber)) {
+
+        event.preventDefault();
+
+        alert(
+            "Please enter a valid 10-digit Indian mobile number."
+        );
+
+        mobileField.focus();
+
+        return;
+    }
+
+});
+// =========================================
+// Password Validation
+// =========================================
+
+const passwordField =
+    document.getElementById("password");
+
+const confirmPasswordField =
+    document.getElementById("confirm-password");
+
+registrationForm.addEventListener("submit", function (event) {
+
+    const password = passwordField.value;
+    const confirmPassword = confirmPasswordField.value;
+
+    // Password length check
+    if (password.length < 8) {
+
+        event.preventDefault();
+
+        alert(
+            "Password must contain at least 8 characters."
+        );
+
+        passwordField.focus();
+
+        return;
+    }
+
+    // Password match check
+    if (password !== confirmPassword) {
+
+        event.preventDefault();
+
+        alert(
+            "Password and Confirm Password do not match."
+        );
+
+        confirmPasswordField.focus();
+
+        return;
+    }
+
+});
+// =========================================
+// Customer Name + Email Validation
+// =========================================
+
+const customerNameField =
+    document.getElementById("customer-name");
+
+const emailField =
+    document.getElementById("email");
+
+registrationForm.addEventListener("submit", function (event) {
+
+    const customerName = customerNameField.value.trim();
+    const email = emailField.value.trim();
+
+    // Customer name check
+    if (customerName.length < 2) {
+
+        event.preventDefault();
+
+        alert(
+            "Please enter your customer name."
+        );
+
+        customerNameField.focus();
+
+        return;
+    }
+
+    // Email is optional.
+    // Validate it only if the customer has entered one.
+    if (email !== "") {
+
+        const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+
+            event.preventDefault();
+
+            alert(
+                "Please enter a valid email address."
+            );
+
+            emailField.focus();
+
+            return;
+        }
+    }
+
+});
+// =========================================
+// Address + Location Validation
+// =========================================
+
+const addressField =
+    document.getElementById("address");
+
+registrationForm.addEventListener("submit", function (event) {
+
+    const address = addressField.value.trim();
+
+    const latitude = latitudeField.value.trim();
+    const longitude = longitudeField.value.trim();
+
+    // Address check
+    if (address.length < 10) {
+
+        event.preventDefault();
+
+        alert(
+            "Please enter your complete delivery address."
+        );
+
+        addressField.focus();
+
+        return;
+    }
+
+    // Location check
+    if (latitude === "" || longitude === "") {
+
+        event.preventDefault();
+
+        alert(
+            "Please select your delivery location using Current Location or the Map."
+        );
+
+        return;
+    }
+
+});
