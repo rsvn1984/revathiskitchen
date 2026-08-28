@@ -53,6 +53,8 @@ currentLocationButton.addEventListener("click", function () {
         }
     );
 });
+
+
 // =========================================
 // Choose Location on Map
 // =========================================
@@ -97,7 +99,8 @@ mapLocationButton.addEventListener("click", function () {
             if (locationMarker) {
                 locationMarker.setLatLng(event.latlng);
             } else {
-                locationMarker = L.marker(event.latlng).addTo(locationMap);
+                locationMarker =
+                    L.marker(event.latlng).addTo(locationMap);
             }
 
             locationMarker.bindPopup(
@@ -138,6 +141,8 @@ confirmMapLocationButton.addEventListener(
         mapContainer.style.display = "none";
     }
 );
+
+
 // =========================================
 // Mobile Number Validation
 // =========================================
@@ -168,6 +173,8 @@ registrationForm.addEventListener("submit", function (event) {
     }
 
 });
+
+
 // =========================================
 // Password Validation
 // =========================================
@@ -212,6 +219,8 @@ registrationForm.addEventListener("submit", function (event) {
     }
 
 });
+
+
 // =========================================
 // Customer Name + Email Validation
 // =========================================
@@ -260,9 +269,12 @@ registrationForm.addEventListener("submit", function (event) {
 
             return;
         }
+
     }
 
 });
+
+
 // =========================================
 // Address + Location Validation
 // =========================================
@@ -301,6 +313,123 @@ registrationForm.addEventListener("submit", function (event) {
         );
 
         return;
+    }
+
+});
+
+
+// =========================================
+// Customer Registration API
+// =========================================
+
+registrationForm.addEventListener("submit", async function (event) {
+
+    // If any of the existing validation blocks failed,
+    // do not continue to the API.
+    if (event.defaultPrevented) {
+        return;
+    }
+
+    // Stop the browser's normal form submission.
+    event.preventDefault();
+
+    const submitButton =
+        registrationForm.querySelector('button[type="submit"]');
+
+    // Collect form values
+    const customerData = {
+
+        mobile: mobileField.value.trim(),
+
+        password: passwordField.value,
+
+        name: customerNameField.value.trim(),
+
+        email: emailField.value.trim(),
+
+        address: addressField.value.trim(),
+
+        latitude: latitudeField.value.trim(),
+
+        longitude: longitudeField.value.trim()
+
+    };
+
+    // Prevent accidental double submission
+    if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Creating Account...";
+    }
+
+    try {
+
+        const response = await fetch(
+            "/api/register-customer",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(customerData)
+            }
+        );
+
+        const result = await response.json();
+
+        // Registration failed
+        if (!response.ok) {
+
+            alert(
+                result.error ||
+                "Unable to complete customer registration."
+            );
+
+            return;
+        }
+
+        // Registration successful
+        alert(
+            `Account created successfully!\n\nYour Customer ID is: ${result.customerId}`
+        );
+
+        // Clear the form after successful registration
+        registrationForm.reset();
+
+        // Clear saved location
+        latitudeField.value = "";
+        longitudeField.value = "";
+
+        locationStatus.textContent =
+            "Location not selected";
+
+        // Clear selected map coordinates
+        selectedMapLatitude = null;
+        selectedMapLongitude = null;
+
+        // Hide map if it is open
+        mapContainer.style.display = "none";
+
+    } catch (error) {
+
+        console.error(
+            "Customer registration error:",
+            error
+        );
+
+        alert(
+            "Unable to connect to the registration server. Please try again."
+        );
+
+    } finally {
+
+        // Restore button
+        if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = "Create My Account";
+        }
+
     }
 
 });
