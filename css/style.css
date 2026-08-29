@@ -878,3 +878,57 @@ main {
     }
 
 }
+/* =========================================
+   CUSTOMER ACCOUNT LINKS
+========================================= */
+
+.site-header .container {
+    position: relative;
+}
+
+.customer-links {
+    position: absolute;
+    top: 15px;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 22px;
+
+    background: #222;
+    border-radius: 30px;
+}
+
+.customer-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.customer-link:hover {
+    text-decoration: underline;
+}
+
+.customer-icon {
+    width: 16px;
+    height: 16px;
+
+    fill: none;
+    stroke: #d4a017;
+    stroke-width: 2;
+
+    flex-shrink: 0;
+}
+
+.customer-divider {
+    color: #888;
+    font-size: 14px;
+}
