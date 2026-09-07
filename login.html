@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Customer Login - Revathi's Kitchen</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+    <link
+    rel="stylesheet"
+    href="css/login.css"
+    >
+</head>
+
+<body>
+
+    <!-- HEADER / BRAND -->
+<header class="site-header">
+
+    <div class="container">
+
+        <img
+            src="images/rk_logo.png"
+            alt="Revathi's Kitchen Logo"
+            class="logo"
+        >
+
+        <h1>Revathi's Kitchen</h1>
+
+        <p class="tagline">
+            Authentic Homemade Vegetarian Cuisine
+        </p>
+
+    </div>
+
+</header>
+
+
+    <!-- LOGIN SECTION -->
+    <main>
+
+        <section class="customer-login-section">
+
+            <div class="customer-login-container">
+
+                <h2>Customer Login</h2>
+
+                <p class="login-subtitle">
+                    Login to your Revathi's Kitchen account
+                </p>
+
+
+                <form id="loginForm" novalidate>
+
+                    <!-- MOBILE NUMBER -->
+                    <div class="form-group">
+
+                        <label for="mobile">
+                            Mobile Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="mobile"
+                            name="mobile"
+                            placeholder="Enter your mobile number"
+                            maxlength="10"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+                    <button
+                        type="submit"
+                        class="login-button"
+                    >
+                        Login
+                    </button>
+
+
+                    <!-- MESSAGE -->
+                    <div
+                        id="loginMessage"
+                        class="login-message"
+                    ></div>
+
+
+                    <!-- REGISTER LINK -->
+                    <p class="register-link">
+
+                        New customer?
+
+                        <a href="customer-registration.html">
+                            Register here
+                        </a>
+
+                    </p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/login.js"></script>
+
+</body>
+</html>

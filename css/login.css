@@ -1,0 +1,132 @@
+/* =========================================
+   CUSTOMER LOGIN PAGE
+========================================= */
+
+.customer-login-section {
+    min-height: 60vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 50px 20px;
+}
+
+.customer-login-container {
+    width: 420px;
+    max-width: 100%;
+
+    padding: 35px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+}
+
+.customer-login-container h2 {
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 28px;
+}
+
+.login-subtitle {
+    margin: 8px 0 28px;
+
+    text-align: center;
+
+    color: #666666;
+
+    font-size: 14px;
+}
+
+.customer-login-container .form-group {
+    margin-bottom: 20px;
+}
+
+.customer-login-container .form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: 600;
+}
+
+.customer-login-container .form-group input {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+}
+
+.customer-login-container .form-group input:focus {
+    outline: none;
+
+    border-color: #d4a017;
+}
+
+.login-button {
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #222222;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: #333333;
+}
+
+.login-message {
+    min-height: 20px;
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+.register-link {
+    margin-top: 25px;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #b8860b;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
