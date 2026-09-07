@@ -70,9 +70,7 @@ loginForm.addEventListener("submit", async function (event) {
 
          return;
         }
-        loginMessage.textContent =
-        result.message ||
-        "Login successful.";
+        window.location.href = "/index.html";
 
         /*
          * Session handling will be added here
