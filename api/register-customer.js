@@ -188,12 +188,21 @@ export default async function handler(req, res) {
             ])
         });
 
-        if (!sequenceResponse.ok) {
-            throw new Error(
-                "Unable to generate customer ID"
-            );
-        }
+       if (!sequenceResponse.ok) {
 
+    const errorText =
+        await sequenceResponse.text();
+
+    console.error(
+        "Upstash INCR error:",
+        sequenceResponse.status,
+        errorText
+    );
+
+    throw new Error(
+        "Unable to generate customer ID"
+    );
+}
         const sequenceResult =
             await sequenceResponse.json();
 
